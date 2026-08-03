@@ -1,0 +1,581 @@
+/* ==========================================
+   NEON CLOCK PRO 2.0
+   Premium UI - Part 1
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;800&display=swap');
+
+:root{
+    --primary:#00f7ff;
+    --secondary:#8a2eff;
+    --accent:#00ff88;
+    --bg:#050816;
+    --card:rgba(255,255,255,.08);
+    --text:#ffffff;
+    --border:rgba(255,255,255,.15);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Orbitron',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#050816,#0a1024,#050816);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+/* Animated Background */
+
+.bg-animation{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    overflow:hidden;
+}
+
+.bg-animation span{
+    position:absolute;
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    filter:blur(60px);
+    animation:float 12s linear infinite;
+}
+
+.bg-animation span:nth-child(1){
+    background:#00f7ff55;
+    top:5%;
+    left:10%;
+}
+
+.bg-animation span:nth-child(2){
+    background:#ff00ff55;
+    top:65%;
+    right:10%;
+}
+
+.bg-animation span:nth-child(3){
+    background:#00ff8855;
+    bottom:10%;
+    left:30%;
+}
+
+.bg-animation span:nth-child(4){
+    background:#7c4dff55;
+    top:25%;
+    right:35%;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0) scale(1);
+    }
+    50%{
+        transform:translateY(-35px) scale(1.15);
+    }
+    100%{
+        transform:translateY(0) scale(1);
+    }
+}
+
+/* Main Container */
+
+.container{
+    width:95%;
+    max-width:1200px;
+    margin:40px auto;
+    padding:30px;
+}
+
+/* Header */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+header h1{
+    font-size:34px;
+    color:var(--primary);
+    text-shadow:
+        0 0 10px var(--primary),
+        0 0 25px var(--primary);
+}
+
+#themeBtn{
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+    color:#fff;
+    font-size:20px;
+    background:rgba(255,255,255,.1);
+    border:1px solid var(--border);
+    backdrop-filter:blur(12px);
+    transition:.3s;
+}
+
+#themeBtn:hover{
+    transform:rotate(20deg) scale(1.1);
+    box-shadow:0 0 20px var(--primary);
+}
+/* ==========================================
+   NEON CLOCK PRO 2.0
+   Premium UI - Part 2
+========================================== */
+
+
+/* Common Card Design */
+
+.clock-card,
+.tool-card,
+.world-clock{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    margin-bottom:30px;
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 0 25px rgba(0,247,255,.15),
+        inset 0 0 25px rgba(255,255,255,.05);
+
+}
+
+
+/* Digital Clock */
+
+.clock-card{
+
+    text-align:center;
+
+    border:2px solid var(--primary);
+
+    box-shadow:
+        0 0 20px var(--primary),
+        inset 0 0 30px rgba(0,247,255,.2);
+
+}
+
+
+#time{
+
+    font-size:75px;
+
+    font-weight:800;
+
+    letter-spacing:8px;
+
+    color:var(--primary);
+
+    text-shadow:
+
+        0 0 10px var(--primary),
+
+        0 0 30px var(--primary),
+
+        0 0 60px var(--primary);
+
+    animation:glow 1.5s infinite alternate;
+
+}
+
+
+@keyframes glow{
+
+    from{
+
+        opacity:.8;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+#ampm{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    padding:8px 25px;
+
+    border-radius:30px;
+
+    background:var(--primary);
+
+    color:#001;
+
+    font-weight:bold;
+
+    box-shadow:
+
+        0 0 15px var(--primary);
+
+}
+
+
+#date{
+
+    margin-top:20px;
+
+    font-size:18px;
+
+    color:#ddd;
+
+}
+
+
+/* World Clock */
+
+.world-clock h2,
+.tool-card h2{
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+    text-shadow:
+
+        0 0 10px var(--primary);
+
+}
+
+
+.world-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+
+.city-card{
+
+    padding:20px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    background:rgba(0,0,0,.3);
+
+    border:1px solid var(--border);
+
+    transition:.3s;
+
+}
+
+
+.city-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+
+        0 0 20px var(--primary);
+
+}
+
+
+.city-card h3{
+
+    color:#fff;
+
+    margin-bottom:10px;
+
+}
+
+
+.city-card p{
+
+    color:var(--primary);
+
+    font-size:22px;
+
+}
+
+
+/* Input Fields */
+
+input{
+
+    padding:14px;
+
+    border-radius:15px;
+
+    border:none;
+
+    outline:none;
+
+    background:#111827;
+
+    color:#fff;
+
+    font-size:16px;
+
+    border:1px solid var(--primary);
+
+}
+/* ==========================================
+   NEON CLOCK PRO 2.0
+   Premium UI - Part 3
+========================================== */
+
+
+/* Buttons */
+
+button{
+
+    padding:12px 25px;
+
+    margin:8px;
+
+    border:none;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:#fff;
+
+    background:linear-gradient(
+        45deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    transition:.3s;
+
+    box-shadow:
+
+        0 0 15px var(--primary);
+
+}
+
+
+button:hover{
+
+    transform:translateY(-3px) scale(1.05);
+
+    box-shadow:
+
+        0 0 25px var(--primary),
+
+        0 0 45px var(--secondary);
+
+}
+
+
+
+/* Alarm Section */
+
+.alarm-box{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+}
+
+
+#alarmStatus{
+
+    margin-top:15px;
+
+    color:var(--accent);
+
+}
+
+
+
+/* Stopwatch */
+
+#stopwatch{
+
+    text-align:center;
+
+    font-size:50px;
+
+    margin:20px;
+
+    color:var(--primary);
+
+    text-shadow:
+
+        0 0 20px var(--primary);
+
+}
+
+
+
+.btn-group{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+/* Countdown Timer */
+
+
+#countdown{
+
+    text-align:center;
+
+    margin:20px;
+
+    font-size:45px;
+
+    color:var(--accent);
+
+    text-shadow:
+
+        0 0 20px var(--accent);
+
+}
+
+
+
+/* Footer */
+
+
+footer{
+
+    text-align:center;
+
+    padding:25px;
+
+    color:#aaa;
+
+    font-size:14px;
+
+}
+
+
+
+/* Light Theme */
+
+.light{
+
+    --bg:#ffffff;
+
+    --card:rgba(0,0,0,.08);
+
+    --text:#111;
+
+}
+
+
+
+/* Responsive Design */
+
+
+@media(max-width:900px){
+
+
+    .world-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+    #time{
+
+        font-size:55px;
+
+    }
+
+}
+
+
+
+@media(max-width:600px){
+
+
+    .container{
+
+        padding:15px;
+
+    }
+
+
+    header h1{
+
+        font-size:22px;
+
+    }
+
+
+    .world-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    #time{
+
+        font-size:38px;
+
+        letter-spacing:3px;
+
+    }
+
+
+    .clock-card,
+    .tool-card,
+    .world-clock{
+
+        padding:20px;
+
+    }
+
+
+    button{
+
+        width:100%;
+
+    }
+
+}

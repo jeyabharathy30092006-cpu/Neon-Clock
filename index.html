@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Neon Clock Pro 2.0</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+
+            <h1>
+                <i class="fa-solid fa-clock"></i>
+                Neon Clock Pro
+            </h1>
+
+            <button id="themeBtn">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+        </header>
+
+        <!-- Digital Clock -->
+        <section class="clock-card">
+
+            <div id="time">
+                00 : 00 : 00
+            </div>
+
+            <div id="ampm">
+                AM
+            </div>
+
+            <div id="date">
+                Sunday, August 02, 2026
+            </div>
+
+        </section>
+
+        <!-- World Clock -->
+        <section class="world-clock">
+
+            <h2>
+                <i class="fa-solid fa-earth-asia"></i>
+                World Clock
+            </h2>
+
+            <div class="world-grid">
+
+                <div class="city-card">
+                    <h3>India</h3>
+                    <p id="indiaTime">00:00:00</p>
+                </div>
+
+                <div class="city-card">
+                    <h3>London</h3>
+                    <p id="ukTime">00:00:00</p>
+                </div>
+
+                <div class="city-card">
+                    <h3>New York</h3>
+                    <p id="usTime">00:00:00</p>
+                </div>
+
+                <div class="city-card">
+                    <h3>Tokyo</h3>
+                    <p id="japanTime">00:00:00</p>
+                </div>
+
+            </div>
+
+        </section>
+        <!-- Alarm Section -->
+        <section class="tool-card">
+
+            <h2>
+                <i class="fa-solid fa-bell"></i>
+                Alarm
+            </h2>
+
+            <div class="alarm-box">
+
+                <input type="time" id="alarmTime">
+
+                <button id="setAlarm">
+                    Set Alarm
+                </button>
+
+                <button id="clearAlarm">
+                    Clear
+                </button>
+
+            </div>
+
+            <p id="alarmStatus">
+                No alarm set
+            </p>
+
+        </section>
+
+        <!-- Stopwatch -->
+        <section class="tool-card">
+
+            <h2>
+                <i class="fa-solid fa-stopwatch"></i>
+                Stopwatch
+            </h2>
+
+            <div id="stopwatch">
+                00:00:00
+            </div>
+
+            <div class="btn-group">
+
+                <button id="startSW">Start</button>
+
+                <button id="pauseSW">Pause</button>
+
+                <button id="resetSW">Reset</button>
+
+            </div>
+
+        </section>
+
+        <!-- Countdown Timer -->
+        <section class="tool-card">
+
+            <h2>
+                <i class="fa-solid fa-hourglass-half"></i>
+                Countdown Timer
+            </h2>
+
+            <input
+                type="number"
+                id="minutes"
+                placeholder="Minutes"
+                min="1">
+
+            <div id="countdown">
+                00:00
+            </div>
+
+            <div class="btn-group">
+
+                <button id="startTimer">
+                    Start
+                </button>
+
+                <button id="resetTimer">
+                    Reset
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- Footer -->
+        <footer>
+
+            <p>
+                © 2026 Neon Clock Pro 2.0
+            </p>
+
+            <p>
+                Made with ❤️ using HTML, CSS & JavaScript
+            </p>
+
+        </footer>
+
+    </div>
+
+    <!-- Alarm Sound -->
+    <audio id="alarmAudio" preload="auto">
+        <source src="alarm.mp3.mpeg" type="audio/mpeg">
+    </audio>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
