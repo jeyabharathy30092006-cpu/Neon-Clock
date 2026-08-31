@@ -27,6 +27,7 @@ Neon-Clock
   * style.css
   * script.js
   * alarm.mp3.mpeg
+  * neonclock.jpg
   * README.md
 
 ⚙️ How to Run
@@ -40,8 +41,7 @@ Open "index.html" in your web browser.
 
 ## 📸 Screenshot
 
-![Neon Clock Screenshot]
-(neonclock.jpg)
+![Neon Clock Screenshot](./neonclock.jpg)
 
 🎯 Project Objective
 
