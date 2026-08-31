@@ -38,6 +38,11 @@ Open the project folder in Visual Studio Code.
 3. Run the Website
 Open "index.html" in your web browser.
 
+## 📸 Screenshot
+
+![Neon Clock Screenshot]
+(neonclock.jpg)
+
 🎯 Project Objective
 
 The main objective of this project is to create an attractive real-time digital clock while practicing frontend development concepts such as:
